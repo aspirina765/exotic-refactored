@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test
 
 class ExoticExecutorTests {
 
-    val session = ScentContexts.createSession()
+    private val session = ScentContexts.createSession()
 
     @Test
     fun testParseHarvestCmdLine() {
-        val cmdLine = "-headless harvest https://www.amazon.com/Best-Sellers/zgbs -requireSize 20000"
+        val cmdLine = "-headless harvest https://www.amazon.com/Best-Sellers/zgbs" //-requireSize 20000"
         val executor = ExoticExecutor(cmdLine)
         executor.parseCmdLine()
         assertTrue(executor.harvest)
@@ -24,7 +24,7 @@ class ExoticExecutorTests {
 
     @Test
     fun testParseHarvestCmdLineWithComponentOptions() {
-        val args = "-requireSize 20000 -component #centerCol -component #buybox"
+        val args = "20000 -component #centerCol -component #buybox" //"-requireSize 20000 -component #centerCol -component #buybox"
         val cmdLine = "-headless harvest https://www.amazon.com/Best-Sellers/zgbs $args"
         val executor = ExoticExecutor(cmdLine)
         executor.parseCmdLine()
@@ -37,7 +37,8 @@ class ExoticExecutorTests {
 
     @Test
     fun testParseScrapeCmdLine() {
-        val cmdLine = "-headless scrape https://www.amazon.com/Best-Sellers/zgbs -requireSize 20000 -outLink a[href~=/dp/] -field h2 -field .price"
+        val cmdLine = "-headless scrape https://www.amazon.com/Best-Sellers/zgbs -outLink a[href~=/dp/] -field h2 -field .price"
+        //"-headless scrape https://www.amazon.com/Best-Sellers/zgbs -requireSize 20000 -outLink a[href~=/dp/] -field h2 -field .price"
         val executor = ExoticExecutor(cmdLine)
         executor.parseCmdLine()
         assertFalse(executor.harvest)
@@ -50,7 +51,7 @@ class ExoticExecutorTests {
 
     @Test
     fun testScraping() {
-        val cmdLine = "scrape https://www.amazon.com/dp/B09V3KXJPB -requireSize 20000" +
+        val cmdLine = "scrape https://www.amazon.com/dp/B09V3KXJPB" + // -requireSize 20000" +
                 " -field #productTitle" +
                 " -field #acrPopover -field #acrCustomerReviewText -field #askATFLink"
         val executor = ExoticExecutor(cmdLine)
@@ -62,7 +63,7 @@ class ExoticExecutorTests {
     @Test
     fun testScrapeOutPages() {
         val cmdLine = "scrape https://www.amazon.com/dp/B09V3KXJPB " +
-                " -requireSize 20000" +
+//                " -requireSize 20000" +
                 " -outLink a[href~=/dp/]" +
                 " -topLinks 5" +
                 " -field #productTitle" +

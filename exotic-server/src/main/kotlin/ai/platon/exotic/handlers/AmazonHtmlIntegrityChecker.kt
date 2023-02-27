@@ -111,7 +111,7 @@ class AmazonHtmlIntegrityChecker(
             if (pos != -1) {
                 pos = pageSource.indexOf("New York", pos)
                 if (pos == -1) {
-                    // when the deliver destination is not New York, the district is wrong
+                    // when the delivery destination is not New York, the district is wrong
                     return true
                 }
             }

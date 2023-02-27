@@ -21,7 +21,7 @@
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
 		</license>
 	</licenses>
 
@@ -295,12 +295,18 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-allopen</artifactId>
+			<version>1.8.20-Beta</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<properties>
 		<javac.src.version>11</javac.src.version>
 		<javac.target.version>11</javac.target.version>
-		<kotlin.version>1.5.32</kotlin.version>
+		<kotlin.version>1.8.0</kotlin.version>
 
 		<mysql.connector.version>5.1.34</mysql.connector.version>
 		<cron-utils.version>9.1.5</cron-utils.version>
