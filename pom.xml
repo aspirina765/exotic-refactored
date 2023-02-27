@@ -28,7 +28,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/platonai/exotic.git</connection>
 		<developerConnection>scm:git:https://github.com/platonai/exotic.git</developerConnection>
-		<url>https://github.com/platonai/exotic</url>
+		<url>https://github.com/aspirina765/exotic-refactored.git</url>
 		<tag>v1.11.4-SNAPSHOT</tag>
 	</scm>
 

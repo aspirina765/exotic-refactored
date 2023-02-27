@@ -1,8 +1,13 @@
+#!/usr/bin/env bash
+
 FILE_COUNT=$(find "exotic-standalone/target/" -wholename "exotic-standalone*.jar" | wc -l)
 
-if (( FILE_COUNT == 0 )); then
-  mvn -DskipTests=true
-fi
+current_path="$(pwd)" ;
+cd "${current_path}" ;
 
-cd exotic-standalone/target/ || exit
-java -jar exotic-standalone*.jar harvest https://www.amazon.com/Best-Sellers-Automotive/zgbs/automotive/ -diagnose -vj
+#if (( FILE_COUNT == 0 )); then
+#  mvn #-DskipTests=true
+#fi
+
+ls "${current_path}/exotic-standalone/target/" || exit ;
+java -jar "${current_path}/exotic-standalone/target/exotic-standalone-1.11.4-SNAPSHOT.jar" -headless -diagnose -vj harvest https://www.amazon.com/Best-Sellers-Automotive/zgbs/automotive/ ;
