@@ -1,0 +1,17 @@
+<html lang="zh">
+<head>
+    <title>Exotic</title>
+</head>
+<body>
+<!--/*  Multiple fragments may be defined in one file */-->
+<div th:fragment="footer" th:align="center" class="my-3">
+    &copy; <span th:text="${#temporals.format(#temporals.createNow(), 'yyyy')}">2022</span>
+    <a href="http://platon.ai" target="_blank">platon.ai</a>
+</div>
+<div th:fragment="footer-admin" th:align="center" class="my-3">
+    &copy; <span th:text="${#temporals.format(#temporals.createNow(), 'yyyy')}">2022</span>
+    <a href="http://platon.ai" target="_blank">platon.ai</a>
+    <span th:text="${@environment.getProperty('app.version')}"></span>
+</div>
+</body>
+</html>
